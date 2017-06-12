@@ -1,0 +1,3 @@
+User: ID, Name, Matrikel Nr., Studiengang
+TAN: ID, Matrikel Nr., TAN, Status
+Klausuren: ID, Dozent, Fach, Semester (Studiengang), Datum, Block, Raum
