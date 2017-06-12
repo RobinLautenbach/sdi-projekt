@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<vxml xmlns="http://www.w3.org/2001/vxml" 
+  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" 
+  xsi:schemaLocation="http://www.w3.org/2001/vxml 
+   http://www.w3.org/TR/voicexml21/vxml.xsd"
+   version="2.1" xml:lang="de-DE">
+
+<var name="firstname"/>
+<form>
+   <block name = "block1">  
+	 <assign name="firstname" expr="'Peter'"/>
+      <data name="sample1" src="http://172.24.56.173:9000/VoiceXML/sdi-projekt/webserver/request.php" namelist="firstname" method="get"/> 
+      <script> 
+         var first = sample1.vorname;
+         var city = sample1.nachname;
+      </script>
+      <log>
+         <value expr="first"/>
+      </log>
+      <log>
+         <value expr="city"/>
+      </log>
+   </block>
+</form>
+</vxml>
+
+  <!-- data name="quotedata" src="./f.xml"/>
+  <form>
+    <block>
+      <var name="quote" expr="quotedata.documentElement"/>
+      The change for Ford Motor Company is
+      <value expr="quote.getElementsByTagName('change').item(0).firstChild.data"/>.
+    </block>
+  </form>
+</vxml -->
