@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<vxml xmlns="http://www.w3.org/2001/vxml" 
+  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" 
+  xsi:schemaLocation="http://www.w3.org/2001/vxml 
+   http://www.w3.org/TR/voicexml21/vxml.xsd"
+   version="2.1" xml:lang="de-DE">
+	 
+	 <property name="bargein" value="false" />
+	 
+  <form>
+    <block>
+      <prompt>Herzlich Willkommen bei der telefonischen Klausurauskunft und Anmeldung der Technischen Hochschule Mittelhessen ! </prompt>
+			<goto next="#ask_MatrNr"></goto>
+    </block>
+  </form>
+	
+	
+	<form id="ask_MatrNr">
+    <field name="matrikelnummer" >
+      <grammar src="builtin:dtmf/digits?length=6" mode="dtmf"/>
+      <grammar src="builtin:grammar/digits?length=6" />
+      <prompt bargein="false">Nennen sie Ihre sechsstellige Matrikelnummer in einzelnen Ziffern oder geben sie diese per DTMF ein.</prompt>
+      <filled>
+				<assign name="MatrNr" expr="matrikelnummer" />
+        <prompt bargein="false"> Die Matrikelnummer lautet: <say-as interpret-as="number"> <value expr="MatrNr" /> </say-as> </prompt>
+				<goto next="#ask_Fach"></goto>
+			</filled> 
+    </field>
+		
+    <noinput>
+			<prompt bargein="false">Es wurde nichts eingegeben!</prompt>
+			<reprompt/>
+    </noinput>
+    <nomatch>
+			<prompt bargein="false">Ich habe Sie nicht verstanden!</prompt>
+			<reprompt/>
+    </nomatch>
+  </form>
+	
+	<form id="ask_Fach">
+    <field name="fach" >
+      <grammar src="builtin:dtmf/digits?length=6" mode="dtmf"/>
+      <grammar src="builtin:grammar/digits?length=6" />
+      <prompt bargein="false">Nennen sie das gewünschte Studienfach.</prompt>
+      <filled>
+				<assign name="Fach" expr="fach" />
+        <prompt bargein="false"> Das Fach lautet lautet: <say-as interpret-as="number"> <value expr="Fach" /> </say-as> </prompt>
+      </filled> 
+    </field>
+		
+    <noinput>
+			<prompt bargein="false">Es wurde nichts eingegeben!</prompt>
+			<reprompt/>
+    </noinput>
+    <nomatch>
+			<prompt bargein="false">Ich habe Sie nicht verstanden!</prompt>
+			<reprompt/>
+    </nomatch>
+  </form>
+	
+	
+</vxml>
+
