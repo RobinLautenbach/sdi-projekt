@@ -1,0 +1,23 @@
+
+****** Abfrage Matrikelnummer ***
+
+<form id="ask_MatrNr">
+    <field name="matrikelnummer" >
+      <grammar src="builtin:dtmf/digits?length=6" mode="dtmf"/>
+      <grammar src="builtin:grammar/digits?length=6" />
+      <prompt>Nennen sie Ihre sechsstellige Matrikelnummer in einzelnen Ziffern oder geben sie diese per DTMF ein.</prompt>
+      <filled>
+				<assign name="MatrNr" expr="matrikelnummer" />
+        <prompt> Die Matrikelnummer lautet: <say-as interpret-as="number"> <value expr="MatrNr" /> </say-as> </prompt>
+      </filled> 
+    </field>
+		
+    <noinput>
+			<prompt>Es wurde nichts eingegeben!</prompt>
+			<reprompt/>
+    </noinput>
+    <nomatch>
+			<prompt>Ich habe Sie nicht verstanden!</prompt>
+			<reprompt/>
+    </nomatch>
+  </form>
