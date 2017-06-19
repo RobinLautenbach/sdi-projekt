@@ -5,7 +5,7 @@ error_reporting(E_ALL);
 define ( 'MYSQL_HOST',      'localhost' );
 define ( 'MYSQL_BENUTZER',  'admin' );
 define ( 'MYSQL_KENNWORT',  '123456' );
-define ( 'MYSQL_DATENBANK', 'admin' );
+define ( 'MYSQL_DATENBANK', 'sdi' );
 
 $db_link = mysqli_connect ( MYSQL_HOST,
                             MYSQL_BENUTZER,

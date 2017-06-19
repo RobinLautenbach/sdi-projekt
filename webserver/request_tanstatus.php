@@ -2,9 +2,10 @@
 // Datenbank-Verbindung herstellen
 header("Content-Type: application/json");
 require_once ('connect.php');
-
-$firstname = $_REQUEST['firstname'];
-$sql = 'SELECT * FROM adressen where vorname="'.$firstname.'"';
+//
+//$matr = $_REQUEST['matr'];
+//$tan = $_REQUEST['tan'];
+$sql = 'update tan set status="1" where matrikelnummer="980230" and tan="2222"';
 
 $db_result = mysqli_query( $db_link, $sql );
 if ( ! $db_result )
