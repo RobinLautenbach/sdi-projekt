@@ -3,7 +3,7 @@
 -- http://www.phpmyadmin.net
 --
 -- Host: 127.0.0.1
--- Erstellungszeit: 12. Jun 2017 um 09:55
+-- Erstellungszeit: 12. Jun 2017 um 11:21
 -- Server Version: 5.6.21
 -- PHP-Version: 5.6.3
 
@@ -34,7 +34,7 @@ CREATE TABLE IF NOT EXISTS `klausuren` (
   `datum` date NOT NULL,
   `block` tinyint(3) unsigned NOT NULL,
   `raum` varchar(50) NOT NULL
-) ENGINE=InnoDB AUTO_INCREMENT=80 DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB AUTO_INCREMENT=102 DEFAULT CHARSET=latin1;
 
 --
 -- Daten für Tabelle `klausuren`
@@ -119,7 +119,29 @@ INSERT INTO `klausuren` (`id`, `dozent`, `fach`, `semester`, `datum`, `block`, `
 (76, 'Kremer', 'SB', 'WKM3', '2017-06-14', 5, 'A3 208'),
 (77, 'Kremer,Pfister', 'DAF', 'BIB5C', '2017-06-07', 5, 'A8 106'),
 (78, 'Kresta', 'WE', 'MMM2', '2017-05-23', 5, 'A2 U117'),
-(79, 'Kushnirevych', 'EFA', 'MAB5', '2017-06-19', 6, 'A8 003');
+(79, 'Kushnirevych', 'EFA', 'MAB5', '2017-06-19', 6, 'A8 003'),
+(80, 'Kuznietsov', 'DMR', 'AEB5B,AEB6B,MEB5A,MEB5B,MEB6', '2017-06-21', 6, 'A8 003'),
+(81, 'Kuznietsov', 'SSI', 'MMM2', '2017-06-28', 6, 'A8 003'),
+(82, 'Langendorf', 'POW', 'MBB4C,MBB5C,MBB6C', '2017-05-20', 2, 'A3 U105'),
+(83, 'Lindenstruth', 'FM', 'WFB3,WTB3', '2017-06-07', 6, 'A3 208'),
+(84, 'Lucke', 'INW', 'MAB1,MAB2', '2017-06-08', 6, 'A2 206'),
+(85, 'Malerczyk', 'GD1', 'TIB5B,MIB3A,MIB3B', '2017-06-14', 6, 'A8 001'),
+(86, 'Malerczyk', 'MV1', 'MIM1,MIM2', '2017-06-14', 6, 'A8 001'),
+(87, 'Merkel,Götz', 'NG', 'WTB1,WFB1', '2017-06-13', 6, 'A8 001a,A8 001b'),
+(88, 'Merkel,Uhl', 'NG', 'MIB1A,MIB1B,TIB3', '2017-07-04', 6, 'B1 001'),
+(89, 'Merkel', 'BAF', 'BIB1', '2017-06-30', 6, 'A3 U105'),
+(90, 'Metz', 'FF', 'MBB4C,MBB5C,MBB6C', '2017-06-30', 6, 'A2 206'),
+(91, 'Metz', 'WKE', 'MBB4C,MBB5C,MBB6C', '2017-06-19', 6, 'A8 003'),
+(92, 'Metz', 'KW1', 'MBB4C,MBB5C,MBB6C', '2017-06-26', 6, 'A2 206'),
+(93, 'Meyer zu Bexten', 'SE', 'MIB5A,MIB5B,MIB5C', '2017-06-26', 6, 'A8 001'),
+(94, 'Möhring', 'ELG', 'LGB1', '2017-06-26', 5, 'A2 206'),
+(95, 'Müller', 'OR', 'MAB3,MAB4', '2017-06-14', 5, 'A2 206'),
+(96, 'Müller', 'MA3', 'PTB3,MPB3,AVB3', '2017-06-14', 5, 'A2 206'),
+(97, 'Nobbers', 'PIA', 'MIB3A,MIB3B', '2017-06-23', 6, 'A8 001'),
+(98, 'Ochs', 'MA1,MA2', 'AEB1', '2017-04-24', 7, 'A3 U107'),
+(99, 'Park,Sang-Min', 'GWW', 'MAB1,MAB2', '2017-06-13', 6, 'A2 206'),
+(100, 'Penirschke', 'IÜ', 'IKB5,AEB5A,AEB6A,IKB6', '2017-06-19', 6, 'B1 001'),
+(101, 'Peppel', 'LE2', 'MEB6A,MEB6B,AEB5A,AEB6A,MEB5', '2017-06-22', 6, 'A2 U117');
 
 --
 -- Indizes der exportierten Tabellen
@@ -139,7 +161,7 @@ ALTER TABLE `klausuren`
 -- AUTO_INCREMENT für Tabelle `klausuren`
 --
 ALTER TABLE `klausuren`
-MODIFY `id` int(255) unsigned NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=80;
+MODIFY `id` int(255) unsigned NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=102;
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
 /*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
