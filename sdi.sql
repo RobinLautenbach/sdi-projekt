@@ -3,7 +3,7 @@
 -- http://www.phpmyadmin.net
 --
 -- Host: 127.0.0.1
--- Erstellungszeit: 12. Jun 2017 um 11:21
+-- Erstellungszeit: 19. Jun 2017 um 10:27
 -- Server Version: 5.6.21
 -- PHP-Version: 5.6.3
 
@@ -143,6 +143,32 @@ INSERT INTO `klausuren` (`id`, `dozent`, `fach`, `semester`, `datum`, `block`, `
 (100, 'Penirschke', 'IÜ', 'IKB5,AEB5A,AEB6A,IKB6', '2017-06-19', 6, 'B1 001'),
 (101, 'Peppel', 'LE2', 'MEB6A,MEB6B,AEB5A,AEB6A,MEB5', '2017-06-22', 6, 'A2 U117');
 
+-- --------------------------------------------------------
+
+--
+-- Tabellenstruktur für Tabelle `tan`
+--
+
+CREATE TABLE IF NOT EXISTS `tan` (
+  `id` int(255) unsigned NOT NULL,
+  `matrikelnummer` int(255) unsigned NOT NULL,
+  `tan` int(255) unsigned NOT NULL,
+  `status` varchar(10) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+-- --------------------------------------------------------
+
+--
+-- Tabellenstruktur für Tabelle `user`
+--
+
+CREATE TABLE IF NOT EXISTS `user` (
+`id` int(255) unsigned NOT NULL,
+  `name` varchar(50) NOT NULL,
+  `matrikelnummer` int(255) unsigned NOT NULL,
+  `semester` varchar(10) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
 --
 -- Indizes der exportierten Tabellen
 --
@@ -154,6 +180,18 @@ ALTER TABLE `klausuren`
  ADD PRIMARY KEY (`id`), ADD FULLTEXT KEY `dozent` (`dozent`);
 
 --
+-- Indizes für die Tabelle `tan`
+--
+ALTER TABLE `tan`
+ ADD PRIMARY KEY (`id`), ADD UNIQUE KEY `tan` (`tan`);
+
+--
+-- Indizes für die Tabelle `user`
+--
+ALTER TABLE `user`
+ ADD PRIMARY KEY (`id`), ADD UNIQUE KEY `matrikelnummer` (`matrikelnummer`);
+
+--
 -- AUTO_INCREMENT für exportierte Tabellen
 --
 
@@ -162,6 +200,11 @@ ALTER TABLE `klausuren`
 --
 ALTER TABLE `klausuren`
 MODIFY `id` int(255) unsigned NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=102;
+--
+-- AUTO_INCREMENT für Tabelle `user`
+--
+ALTER TABLE `user`
+MODIFY `id` int(255) unsigned NOT NULL AUTO_INCREMENT;
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
 /*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
