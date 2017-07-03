@@ -4,8 +4,9 @@ header("Content-Type: application/json");
 require_once ('connect.php');
 
 $dozent = $_REQUEST['dozent'];
-//$sql = 'SELECT * FROM klausuren where dozent="'.$dozent.'"';
-$sql = 'SELECT * FROM klausuren where dozent="arnold" and semester like "%wim2%"';
+$semester = $_REQUEST['semester'];
+$sql = 'SELECT * FROM klausuren where dozent="'.$dozent.'" and semester like "%wim2%"';
+//$sql = 'SELECT * FROM klausuren where dozent="arnold" and semester like "%wim2%"';
 
 $db_result = mysqli_query( $db_link, $sql );
 if ( ! $db_result )

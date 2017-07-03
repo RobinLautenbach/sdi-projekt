@@ -3,9 +3,9 @@
 header("Content-Type: application/json");
 require_once ('connect.php');
 
-$matr = $_REQUEST['matr'];
+//$matr = $_REQUEST['matr'];
 $tan = $_REQUEST['tan'];
-$sql = 'SELECT * FROM tan where matrikelnummer="980230" and tan="2222"';
+$sql = 'SELECT * FROM tan where matrikelnummer="980230" and tan="'.$tan.'"';
 
 $db_result = mysqli_query( $db_link, $sql );
 if ( ! $db_result )
